@@ -1,24 +1,32 @@
 {
   "name": "cowList",
   "version": "1.0.0",
-  "description": "",
+  "description": "We are creating a Node.js RESTful API by READING and CREATING cow data!",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JetBlitz/cowList.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "node",
+    "restful",
+    "api",
+    "cow",
+    "list"
+  ],
+  "author": "Eivin Kent Adlawan, BSN, RN II",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JetBlitz/cowList/issues"
   },
   "homepage": "https://github.com/JetBlitz/cowList#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
