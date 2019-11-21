@@ -1,4 +1,15 @@
-//This will interact with my schema.sql file
+//! This will interact with my schema.sql file
+
+const express = require('express');
+const router = express.Router();
+
+router.get('/', (req, res, next) => {
+  res.status(200).json({
+    message:'Handling GET requests to /index.js'
+  });
+});
+
+////
 
 var mysql      = require('mysql');
 var connection = mysql.createConnection({
