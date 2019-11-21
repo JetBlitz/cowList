@@ -6,7 +6,7 @@ const app = express(); // execute the express package so we can use its methods
 //! What is app.METHOD(path, callback [, callback ...])
 //NOTE: Routes an HTTP request, where METHOD is the HTTP method of the request, such as GET, PUT, POST, and so on, in lowercase. Thus, the actual methods are app.get(), app.post(), app.put(), and so on.
 
-const cowsRoutes = require('./api/routes/cows'); //requests are forwarded to this file if the URL it is targeting is /cows
+const cowsRoutes = require('../api/routes/cows'); //requests are forwarded to this file if the URL it is targeting is /cows
 
 app.use('/cows', cowsRoutes); // app is a middleware that does things. For this middleware, only the cows path will be targeted: to target only the '/cows' file, pass that as the FIRST ARGUMENT. The secound argument will be my handler that listens and anything that STARTS with '/cows' URL will be FORWARDED to the cowsRoutes for processing
 

@@ -1,7 +1,17 @@
 //! Here, I will be creating a GET and POST request
-
+const db = require('./db/index.js')
 const express = require('express');
 const router = express.Router();
+
+router.get('/api/cows', (req, res, next) => {
+  db.query('SELECT * FROM cows', (err, data) => {
+    if (err) {
+      res.status(500).send(err)
+    } else {
+      res.status(200).send(data)
+    }
+  })
+})
 
 router.get('/', (req, res, next) => {
   res.status(200).json({
