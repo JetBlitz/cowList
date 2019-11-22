@@ -30,10 +30,13 @@ app.get('/api/cows', (req, res) => {
 
 //! inserts a new cow
 app.post('/api/cows', (req, res, next) => {
-  console.log(req.body)
-  db.query('INSERT INTO cows(cowName, cowDescription) values(?, ?)', ['Carl','Fat'], (err, data) => {
+  const { body } = req;
+  const cowName = req.body.cowName
+  const cowDescription = req.body.cowDescription
+  console.log(body);
+  db.query('INSERT INTO cows(cowName, cowDescription) values(?, ?)', [cowName, cowDescription], (err, data) => {
     if(err) {
-      res.status(404).send();
+      res.status(404).send(err);
     } else {
       res.status(201).send(data);
     }
